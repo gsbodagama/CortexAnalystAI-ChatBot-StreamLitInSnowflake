@@ -23,7 +23,7 @@ API_TIMEOUT = 50000  # in milliseconds
 
 # Initialize a Snowpark session for executing queries
 cnx = st.connection("snowflake")
-session = get_active_session()
+session = cnx.session()
 
 
 def main():
