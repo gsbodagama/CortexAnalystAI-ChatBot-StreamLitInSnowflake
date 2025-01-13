@@ -11,9 +11,6 @@ from typing import Dict, List, Optional, Tuple
 import _snowflake  # For interacting with Snowflake-specific APIs
 import pandas as pd
 import streamlit as st  # Streamlit library for building the web app
-from snowflake.snowpark.context import (
-    get_active_session,
-)  # To interact with Snowflake sessions
 from snowflake.snowpark.exceptions import SnowparkSQLException
 
 # List of available semantic model paths in the format: <DATABASE>.<SCHEMA>.<STAGE>/<FILE-NAME>
@@ -25,6 +22,7 @@ API_ENDPOINT = "/api/v2/cortex/analyst/message"
 API_TIMEOUT = 50000  # in milliseconds
 
 # Initialize a Snowpark session for executing queries
+cnx = st.connection("snowflake")
 session = get_active_session()
 
 
