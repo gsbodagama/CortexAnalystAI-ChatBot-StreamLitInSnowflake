@@ -1,4 +1,3 @@
---extra-index-url https://repo.snowflake.com/snowflake
 python==3.8.*
 snowflake-snowpark-python
 streamlit
